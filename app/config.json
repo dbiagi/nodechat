@@ -1,0 +1,9 @@
+{
+    "firebase": {
+        "url": "https://nodechat-67611.firebaseio.com/",
+        "id": "nodechat-67611",
+        "clientEmail": "diegobiagi",
+        "pwd": "123"
+    },
+    "port": "8080"
+}

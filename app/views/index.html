@@ -42,7 +42,14 @@
         <script src="/js/chat.js"></script>
 
         <script>
-            var socket = io()
+            var auth = {
+                login: 'diego',
+                pwd: '123'
+            }
+            
+            var socket = io.connect('', {
+                query: 'authData=' + JSON.stringify(auth)
+            })
 
             $('#chat-form').submit(function (e) {
                 e.preventDefault();
@@ -60,7 +67,7 @@
             function addMessage(content, self) {
                 var $content = $('<span>', {text: content, 'class': 'message-sent'}),
                     calloutClass = self ? 'bs-callout bs-callout-primary' : 'bs-callout bs-callout-default',
-                    callout = $('<div>', { 'class': calloutClass }).append($content),
+                    callout = $('<div>', {'class': calloutClass}).append($content),
                     item = $('<li>').append(callout)
 
                 $('#messages').append(item)

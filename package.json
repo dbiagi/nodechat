@@ -11,7 +11,14 @@
   "author": "Diego de Biagi",
   "contributors": [],
   "dependencies": {
+    "body-parser": "^1.15.2",
     "express": "^4.10.2",
-    "socket.io": "^1.4.8"
+    "express-session": "^1.14.0",
+    "firebase": "^3.2.0",
+    "jade": "^1.11.0",
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "start": "node app.js"
   }
 }

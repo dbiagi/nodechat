@@ -1,9 +1,9 @@
 html{
-    background: #f1f1f1;
     height: 100%;
 }
 
 body {
+    /*background: #dcdcdc;*/
     height: 100%;
     overflow-x: hidden;
 }
@@ -204,3 +204,9 @@ form #m{
     color: #5bc0de;
 }
 /*</editor-fold>*/
+
+.card{
+    background: #fff;
+    maring: 10%;
+    box-shadow: 2px 2px 2px 2px #fff;
+}

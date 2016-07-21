@@ -1,0 +1,22 @@
+extends ./layout.jade
+
+block sidebar
+	#sidebar-wrapper
+		#sidebar-img-wrapper
+			img.img-circle(src="http://fakeimg.pl/140x140/", alt="Imagem do Perfil")
+		ul.sidebar-nav
+			- var n = 0
+			while n <= 5
+				li= 'User ' + n++
+
+block page-content
+	#page-content-wrapper
+		.container
+			ul#messages.list-unstyled
+		#chat-form-wrapper
+			form#chat-form.form-inline
+				.input-group
+					input#m.form-control(autocomplete="off")
+					span.input-group-btn
+						button.btn.btn-primary(type="submit") Send
+						
