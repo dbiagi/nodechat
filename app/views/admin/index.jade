@@ -7,16 +7,20 @@ block sidebar
 		ul.sidebar-nav
 			- var n = 0
 			while n <= 5
-				li= 'User ' + n++
+				li
+					a(href="#")= 'User ' + n++
 
 block page-content
 	#page-content-wrapper
 		.container
 			ul#messages.list-unstyled
 		#chat-form-wrapper
-			form#chat-form.form-inline
+			form#chat-form
 				.input-group
 					input#m.form-control(autocomplete="off")
 					span.input-group-btn
 						button.btn.btn-primary(type="submit") Send
 						
+append javascripts
+	script(src="/socket.io/socket.io.js", charset="utf-8")
+	
