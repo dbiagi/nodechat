@@ -5,5 +5,11 @@
         "clientEmail": "diegobiagi",
         "pwd": "123"
     },
+    "mysql": {
+        "host": "localhost",
+        "user": "root",
+        "password": "123",
+        "db": "nodechat"
+    },
     "port": "8080"
 }

@@ -16,8 +16,10 @@
     "express-session": "^1.14.0",
     "firebase": "^3.2.0",
     "jade": "^1.11.0",
-    "socketio": "^1.0.0",
-    "underscore": "^1.8.3"
+    "lodash": "^4.14.0",
+    "mysql": "^2.11.1",
+    "q": "^1.4.1",
+    "socketio": "^1.0.0"
   },
   "scripts": {
     "start": "node app.js"

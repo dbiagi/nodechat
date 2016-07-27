@@ -23,4 +23,6 @@ block page-content
 						
 append javascripts
 	script(src="/socket.io/socket.io.js", charset="utf-8")
-	
+	script(src="/js/chat.js", charset="utf-8")
+	script(type="text/javascript").
+        var chat = new Chat('', #{user.id})
