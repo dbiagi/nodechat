@@ -38,6 +38,10 @@ form #m{
     bottom: 0;
 }
 
+#messages{
+    margin-bottom: 50px;
+}
+
 /* <editor-fold defaultstate="collapsed" desc="SIDEBAR"> */
 #sidebar-wrapper {
     z-index: 1000;
@@ -204,9 +208,3 @@ form #m{
     color: #5bc0de;
 }
 /*</editor-fold>*/
-
-.card{
-    background: #fff;
-    maring: 10%;
-    box-shadow: 2px 2px 2px 2px #fff;
-}
