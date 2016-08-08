@@ -1,13 +1,13 @@
 var mysql = require('mysql'),
     app = require(__dirname + '/../../app.js'),
     logger = app.get('logger'),
-    config = app.get('config').mysql
+    config = app.get('config').db
 
 var conn = mysql.createConnection({
     host: config.host,
     user: config.user,
     password: config.password,
-    database: config.db
+    database: config.name
 })
 
 conn.connect(function(err){

@@ -36,18 +36,8 @@ var Chat = function (host, id) {
      * Register dom events.
      */
     var registerDOMEvents = function () {
-        var $form = $('#chat-form')
-        $form.submit(function (e) {
-            e.preventDefault()
-
-            var msg = $('#m').val().trim()
-
-            sendMessage(msg)
-            
-            addMessage('Me', msg, true)
-            
-            this.reset()
-        })
+        $('#chat-form').submit(onFormSubmit)
+        
     }
 
     /**
@@ -90,8 +80,20 @@ var Chat = function (host, id) {
                 text: msg
             }))
             .appendTo('#messages')
-        
+
         $li.goTo()
+    }
+
+    var onFormSubmit = function (e) {
+        e.preventDefault()
+
+        var msg = $('#m').val().trim()
+
+        sendMessage(msg)
+
+        addMessage('Me', msg, true)
+
+        this.reset()
     }
 
     /**

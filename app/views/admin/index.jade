@@ -5,6 +5,8 @@ block sidebar
         #sidebar-img-wrapper
             img.img-circle(src="http://fakeimg.pl/140x140/", alt="Imagem do Perfil")
         ul.sidebar-nav
+            li
+                a(href="#" class="active") Todos
             - var n = 0
             while n <= 5
                 li
@@ -12,8 +14,8 @@ block sidebar
 
 block page-content
     #page-content-wrapper
-        .container
-            ul#messages.list-unstyled
+        #messages-wrapper
+            ul#messages.list-unstyled(data-user-id="all")
         #chat-form-wrapper
             form#chat-form
                 .input-group

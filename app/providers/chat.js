@@ -1,10 +1,11 @@
 var app = require(__dirname + '/../../app'),
     logger = app.get('logger'),
-    _ = require('lodash')
+    _ = require('lodash'),
+    config = app.get('config')
 
 var ChatService = function (http) {
     var io = require('socket.io')(http),
-        userModel = require('../models/user'),
+        userModel = require(config.paths.models + '/user'),
         sockets = []
 
     this.initialize = function () {
@@ -15,6 +16,7 @@ var ChatService = function (http) {
     var registerConnectionEvents = function () {
         io.sockets.on('connection', function (socket) {
             registerChatEvents(socket)
+            updateRooms(socket)
         })
     }
 
@@ -51,14 +53,19 @@ var ChatService = function (http) {
             next(null, true)
         })
     }
+    
+    var updateRooms = function(socket){        
+        io.to(socket.id).emit('update-users-list', {
+            users: sockets.map(_.property('user'))
+        })
+    }
 
     var onMessage = function (socket, data) {
         socket.broadcast.emit('message', data)
-        logger.debug('User %s sent this message "%s"', socket.user.name, data.message)
     }
 
     var onCreateRoom = function (socket, data) {
-
+        
     }
 
     var onDisconnect = function (socket) {
@@ -72,6 +79,10 @@ var ChatService = function (http) {
             return s.user.id == socket.user.id
         })
     }
+}
+
+var Protocol = function(){
+    this.CONNECTION = 'connection'
 }
 
 exports.initialize = function (http) {

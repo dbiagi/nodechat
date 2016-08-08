@@ -13,4 +13,9 @@ router.get('/', function(req,res){
     res.render('login/index')
 })
 
+router.get('/test', function(response, request){
+    var users = require('../collections/users')
+    console.log(users.query());
+})
+
 module.exports = router

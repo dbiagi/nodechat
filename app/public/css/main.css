@@ -29,7 +29,6 @@ form #m{
     width: 100%;
     height: 100%;
     position: absolute;
-    padding-left: 250px;
 }
 
 #chat-form-wrapper{
@@ -38,8 +37,8 @@ form #m{
     bottom: 0;
 }
 
-#messages{
-    margin-bottom: 50px;
+#messages-wrapper{
+    padding: 10px 15px 50px 15px;
 }
 
 /* <editor-fold defaultstate="collapsed" desc="SIDEBAR"> */
@@ -99,6 +98,9 @@ form #m{
 .sidebar-nav li a:active,
 .sidebar-nav li a:focus {
     text-decoration: none;
+}
+.sidebar-nav li a.active{
+    background: #ccc;
 }
 
 .sidebar-nav > .sidebar-brand {

@@ -1,9 +1,11 @@
 var express = require('express'),
-    router  = express.Router()
+    router  = express.Router(),
+    app = require(__dirname + '/../../app'),
+    config = app.get('config')
 
 router.post('/auth', function(req, res){
     var session = req.session,
-        model = require('../models/user')
+        model = require(config.paths.models + '/user')
 
     var user = model.getUserByEmail(req.body.email, function(err, user){
         if(!user){
